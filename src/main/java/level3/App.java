@@ -5,16 +5,16 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         // Calculator 객체 생성 (Integer 타입 사용)
-        ArithmeticCalculator<Integer> calculator = new ArithmeticCalculator<>();
+        ArithmeticCalculator<Double> calculator = new ArithmeticCalculator<>();
         Scanner sc = new Scanner(System.in);
 
         System.out.println("==================== 계산기 시작 ====================");
 
         while (true) {
             System.out.print("첫 번째 숫자: ");
-            int a = sc.nextInt();
+            double a = sc.nextDouble();
             System.out.print("두 번째 숫자: ");
-            int b = sc.nextInt();
+            double b = sc.nextDouble();
 
             System.out.println("================= ( +,-,*,/ 선택 ) =================");
             sc.nextLine(); // 남아있는 \n 삭제
@@ -43,19 +43,19 @@ public class App {
 
             try {
                 // 연산 수행
-                int result = 0;
+                double result = 0;
                 switch (operator) {
                     case ADD:
-                        result = calculator.add(a, b).intValue();
+                        result = calculator.add(a, b).doubleValue();
                         break;
                     case SUBTRACT:
-                        result = calculator.subtract(a, b).intValue();
+                        result = calculator.subtract(a, b).doubleValue();
                         break;
                     case MULTIPLY:
-                        result = calculator.multiply(a, b).intValue();
+                        result = calculator.multiply(a, b).doubleValue();
                         break;
                     case DIVIDE:
-                        result = calculator.divide(a, b).intValue();
+                        result = calculator.divide(a, b).doubleValue();
                         break;
                 }
 
@@ -64,7 +64,7 @@ public class App {
 
                 // 결과 필터링
                 System.out.print("기준값을 입력하세요: ");
-                int filterValue = sc.nextInt();
+                double filterValue = sc.nextDouble();
 
                 //System.out.println(calculator.getResults()); : 디버깅으로 배열 까보니 results에 안쌓임 결과가
                 System.out.println("입력값보다 큰 결과들: " + calculator.greaterThanFilterResults(filterValue));

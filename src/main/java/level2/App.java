@@ -12,7 +12,7 @@ public class App {
 
         while (true) {
             System.out.print("첫 번째 숫자: ");
-            int a = sc.nextInt();
+            int a = sc.nextInt();   
             System.out.print("두 번째 숫자: ");
             int b = sc.nextInt();
 
